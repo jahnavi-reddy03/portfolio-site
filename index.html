@@ -1,13 +1,62 @@
 <!doctype html>
-<html>
+<html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>YOUR NAME — Portfolio</title>
+    <title>Jahnavi Reddy — Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <style>body { font-family: system-ui, Arial; margin: 3rem; line-height: 1.6; }</style>
+    <style>
+      :root { color-scheme: light dark; }
+      body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; margin: 3rem; line-height: 1.6; }
+      h1 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: .25rem; }
+      .muted { opacity: .75; }
+      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 1rem; }
+      .card { border: 1px solid #ccc; border-radius: 12px; padding: 1rem 1.25rem; }
+      a { color: inherit; text-decoration: underline; }
+      header { margin-bottom: 2rem; }
+      footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
+    </style>
   </head>
   <body>
-    <h1>Hi, I'm YOUR NAME 👋</h1>
-    <p>Welcome to my portfolio. Hosted on AWS EC2 with Nginx + SSL.</p>
+    <header>
+      <h1>Hi, I'm Jahnavi Reddy 👋</h1>
+      <p class="muted">
+        Cloud/DevOps learner. This portfolio is hosted on <strong>AWS EC2</strong> (Apache) and deployed via <strong>Git</strong>.
+      </p>
+      <p>
+        <a href="https://github.com/jahnavi-reddy03" target="_blank" rel="noopener">GitHub</a> ·
+        <a href="#" target="_blank" rel="noopener">LinkedIn</a> ·
+        <a href="mailto:you@example.com">Email</a>
+      </p>
+    </header>
+
+    <h2>Projects</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>EC2 Static Portfolio</h3>
+        <p>Personal website deployed on AWS EC2 with Apache, security groups, and Git‑based updates.</p>
+        <p class="muted">AWS · EC2 · Linux · Apache · Git</p>
+      </div>
+      <div class="card">
+        <h3>Project Two</h3>
+        <p>Brief 1–2 line description. Replace with your own project and link.</p>
+        <p class="muted">Tech · Tech · Tech</p>
+      </div>
+      <div class="card">
+        <h3>Project Three</h3>
+        <p>Brief 1–2 line description. Replace with your own project and link.</p>
+        <p class="muted">Tech · Tech · Tech</p>
+      </div>
+    </div>
+
+    <h2>About</h2>
+    <p>
+      I’m Jahnavi, currently learning cloud and DevOps. I enjoy building simple, reliable deployments and automating
+      repeatable tasks. Looking for opportunities to grow in cloud engineering and platform tooling.
+    </p>
+
+    <footer>
+      © <span id="y"></span> Jahnavi Reddy · Hosted on AWS EC2
+      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
+    </footer>
   </body>
 </html>
