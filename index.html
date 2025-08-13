@@ -6,57 +6,175 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
       :root { color-scheme: light dark; }
-      body { font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif; margin: 3rem; line-height: 1.6; }
-      h1 { font-size: clamp(2rem, 3.5vw, 3rem); margin-bottom: .25rem; }
-      .muted { opacity: .75; }
-      .grid { display: grid; gap: 1rem; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); margin-top: 1rem; }
-      .card { border: 1px solid #ccc; border-radius: 12px; padding: 1rem 1.25rem; }
+      * { box-sizing: border-box; }
+      body {
+        font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif;
+        margin: 0;
+        line-height: 1.6;
+        background:
+          radial-gradient(1000px 500px at 10% -10%, #0000, #0001),
+          radial-gradient(1000px 500px at 110% -10%, #0000, #0001);
+      }
+
+      .page {
+        max-width: 1000px;
+        margin: 0 auto;
+        padding: 3rem 1.25rem 4rem;
+        position: relative;
+        z-index: 1; /* above emoji layer */
+      }
+
+      header { margin-bottom: 1.25rem; }
+      h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .25rem; }
+      .muted { opacity: .75; margin: 0 0 .75rem; }
       a { color: inherit; text-decoration: underline; }
-      header { margin-bottom: 2rem; }
+
+      /* Quick facts cards */
+      .facts {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+        gap: 1rem;
+        margin: 1.25rem 0 2rem;
+      }
+      .card {
+        border: 1px solid #cfcfcf33;
+        backdrop-filter: blur(6px);
+        background: #ffffff14;
+        border-radius: 16px;
+        padding: 1rem 1.1rem;
+        box-shadow: 0 10px 24px #00000013;
+      }
+      .card h3 { margin: .25rem 0; font-size: 1.1rem; }
+      .emoji {
+        font-size: 1.6rem;
+        display: inline-block;
+        transform: translateY(0);
+        animation: bob 3.2s ease-in-out infinite;
+      }
+      .emoji.slow { animation-duration: 4s; }
+      .emoji.fast { animation-duration: 2.6s; }
+
+      @keyframes bob {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-6px); }
+      }
+
+      /* Projects section */
+      h2 { margin: 2rem 0 0.75rem; }
+      .grid {
+        display: grid;
+        gap: 1rem;
+        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      }
+
+      /* Floating emoji background layer */
+      .float-layer {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        overflow: hidden;
+      }
+      .float {
+        position: absolute;
+        font-size: clamp(1.6rem, 6vw, 3.2rem);
+        opacity: .18;
+        animation: float 12s linear infinite;
+      }
+      @keyframes float {
+        0%   { transform: translateY(110vh) translateX(0) rotate(0deg); }
+        100% { transform: translateY(-20vh) translateX(30px) rotate(360deg); }
+      }
+      /* Respect reduced motion */
+      @media (prefers-reduced-motion: reduce) {
+        .emoji, .float { animation: none !important; }
+      }
+
       footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
     </style>
   </head>
   <body>
-    <header>
-      <h1>Hi, I'm Jahnavi Reddy 👋</h1>
-      <p class="muted">
-        Cloud/DevOps learner. This portfolio is hosted on <strong>AWS EC2</strong> (Apache) and deployed via <strong>Git</strong>.
-      </p>
-      <p>
-        <a href="https://github.com/jahnavi-reddy03" target="_blank" rel="noopener">GitHub</a> ·
-        <a href="#" target="_blank" rel="noopener">LinkedIn</a> ·
-        <a href="mailto:you@example.com">Email</a>
-      </p>
-    </header>
-
-    <h2>Projects</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>EC2 Static Portfolio</h3>
-        <p>Personal website deployed on AWS EC2 with Apache, security groups, and Git‑based updates.</p>
-        <p class="muted">AWS · EC2 · Linux · Apache · Git</p>
-      </div>
-      <div class="card">
-        <h3>Project Two</h3>
-        <p>Brief 1–2 line description. Replace with your own project and link.</p>
-        <p class="muted">Tech · Tech · Tech</p>
-      </div>
-      <div class="card">
-        <h3>Project Three</h3>
-        <p>Brief 1–2 line description. Replace with your own project and link.</p>
-        <p class="muted">Tech · Tech · Tech</p>
-      </div>
+    <!-- subtle floating emoji background -->
+    <div class="float-layer" aria-hidden="true">
+      <div class="float" style="left:6%; animation-duration:14s;">🎓</div>
+      <div class="float" style="left:22%; animation-duration:17s; animation-delay: -4s;">🗽</div>
+      <div class="float" style="left:48%; animation-duration:13s; animation-delay: -2s;">✈️</div>
+      <div class="float" style="left:72%; animation-duration:16s; animation-delay: -6s;">🐶</div>
+      <div class="float" style="left:88%; animation-duration:19s; animation-delay: -8s;">✨</div>
     </div>
 
-    <h2>About</h2>
-    <p>
-      I’m Jahnavi, currently learning cloud and DevOps. I enjoy building simple, reliable deployments and automating
-      repeatable tasks. Looking for opportunities to grow in cloud engineering and platform tooling.
-    </p>
+    <main class="page">
+      <header>
+        <h1>Hi, I'm Jahnavi Reddy 👋</h1>
+        <p class="muted">Cloud/DevOps learner based in New York/New Jersey (currently in California!).  
+        This site is hosted on <strong>AWS EC2</strong> with <strong>Apache</strong> and updated via <strong>Git</strong>.</p>
+        <p>
+          <a href="https://github.com/jahnavi-reddy03" target="_blank" rel="noopener">GitHub</a> ·
+          <a href="#" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="mailto:you@example.com">Email</a>
+        </p>
+      </header>
 
-    <footer>
-      © <span id="y"></span> Jahnavi Reddy · Hosted on AWS EC2
-      <script>document.getElementById('y').textContent = new Date().getFullYear();</script>
-    </footer>
+      <!-- Quick facts row -->
+      <section aria-labelledby="facts-title">
+        <h2 id="facts-title" style="margin-top:1.2rem;">Quick facts</h2>
+        <div class="facts">
+          <article class="card">
+            <div class="emoji">🎓</div>
+            <h3>CS Student</h3>
+            <p>Currently studying computer science and diving into cloud + DevOps.</p>
+          </article>
+
+          <article class="card">
+            <div class="emoji slow">🗽</div>
+            <h3>New York / New Jersey</h3>
+            <p>East Coast roots, currently visiting California.</p>
+          </article>
+
+          <article class="card">
+            <div class="emoji fast">✈️</div>
+            <h3>Loves to Travel</h3>
+            <p>Always down to explore new cities, coffee spots, and trails.</p>
+          </article>
+
+          <article class="card">
+            <div class="emoji">🐶</div>
+            <h3>Dog Mom: Leo</h3>
+            <p>My golden buddy Leo is the best pair‑programmer (and snack thief).</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- Projects starter -->
+      <section aria-labelledby="projects-title">
+        <h2 id="projects-title">Projects</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>EC2 Static Portfolio</h3>
+            <p>Deployed a secure static site on EC2 with Apache. Automated updates using Git.</p>
+            <p class="muted">AWS · EC2 · Linux · Apache · Git</p>
+          </article>
+          <article class="card">
+            <h3>Project Two</h3>
+            <p>Replace with your own description & link to GitHub/demo.</p>
+            <p class="muted">Tech · Tech · Tech</p>
+          </article>
+          <article class="card">
+            <h3>Project Three</h3>
+            <p>Replace with your own description & link to GitHub/demo.</p>
+            <p class="muted">Tech · Tech · Tech</p>
+          </article>
+        </div>
+      </section>
+
+      <footer>
+        © <span id="y"></span> Jahnavi Reddy · Hosted on AWS EC2
+      </footer>
+    </main>
+
+    <script>
+      // keep footer year current
+      document.getElementById('y').textContent = new Date().getFullYear();
+    </script>
   </body>
 </html>
