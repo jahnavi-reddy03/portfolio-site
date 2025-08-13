@@ -5,6 +5,32 @@
     <title>Jahnavi Reddy — Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
+.quick-facts-container {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-top: 1rem;
+}
+
+.fact-card {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem 1.5rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,.08);
+  font-size: 1.1rem;
+  font-weight: 600;
+  text-align: center;
+  min-width: 220px;
+  animation: float 3s ease-in-out infinite;
+}
+.fact-card span { display: block; margin-top: .4rem; }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50%     { transform: translateY(-8px); }
+}
+
       :root { color-scheme: light dark; }
       * { box-sizing: border-box; }
       body {
@@ -118,6 +144,13 @@
       <!-- Quick facts row -->
       <section aria-labelledby="facts-title">
         <h2 id="facts-title" style="margin-top:1.2rem;">Quick facts</h2>
+<div class="quick-facts-container">
+  <div class="fact-card">🎓<span>CS Student</span></div>
+  <div class="fact-card">🏙<span>New York Living</span></div>
+  <div class="fact-card">✈️<span>Loves to Travel</span></div>
+  <div class="fact-card">🐶<span>Pet Dog Leo</span></div>
+</div>
+
         <div class="facts">
           <article class="card">
             <div class="emoji">🎓</div>
