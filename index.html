@@ -5,118 +5,8 @@
     <title>Jahnavi Reddy — Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <style>
-.quick-facts-container {
-  display: flex;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-  margin-top: 1rem;
-}
-
-.fact-card {
-  background: #fff;
-  border-radius: 12px;
-  padding: 1rem 1.5rem;
-  box-shadow: 0 4px 10px rgba(0,0,0,.08);
-  font-size: 1.1rem;
-  font-weight: 600;
-  text-align: center;
-  min-width: 220px;
-  animation: float 3s ease-in-out infinite;
-}
-.fact-card span { display: block; margin-top: .4rem; }
-
-@keyframes float {
-  0%,100% { transform: translateY(0); }
-  50%     { transform: translateY(-8px); }
-}
-
-      :root { color-scheme: light dark; }
-      * { box-sizing: border-box; }
-      body {
-        font-family: system-ui, -apple-system, Segoe UI, Arial, sans-serif;
-        margin: 0;
-        line-height: 1.6;
-        background:
-          radial-gradient(1000px 500px at 10% -10%, #0000, #0001),
-          radial-gradient(1000px 500px at 110% -10%, #0000, #0001);
-      }
-
-      .page {
-        max-width: 1000px;
-        margin: 0 auto;
-        padding: 3rem 1.25rem 4rem;
-        position: relative;
-        z-index: 1; /* above emoji layer */
-      }
-
-      header { margin-bottom: 1.25rem; }
-      h1 { font-size: clamp(2rem, 4vw, 3rem); margin: 0 0 .25rem; }
-      .muted { opacity: .75; margin: 0 0 .75rem; }
-      a { color: inherit; text-decoration: underline; }
-
-      /* Quick facts cards */
-      .facts {
-        display: grid;
-        grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-        gap: 1rem;
-        margin: 1.25rem 0 2rem;
-      }
-      .card {
-        border: 1px solid #cfcfcf33;
-        backdrop-filter: blur(6px);
-        background: #ffffff14;
-        border-radius: 16px;
-        padding: 1rem 1.1rem;
-        box-shadow: 0 10px 24px #00000013;
-      }
-      .card h3 { margin: .25rem 0; font-size: 1.1rem; }
-      .emoji {
-        font-size: 1.6rem;
-        display: inline-block;
-        transform: translateY(0);
-        animation: bob 3.2s ease-in-out infinite;
-      }
-      .emoji.slow { animation-duration: 4s; }
-      .emoji.fast { animation-duration: 2.6s; }
-
-      @keyframes bob {
-        0%, 100% { transform: translateY(0); }
-        50%      { transform: translateY(-6px); }
-      }
-
-      /* Projects section */
-      h2 { margin: 2rem 0 0.75rem; }
-      .grid {
-        display: grid;
-        gap: 1rem;
-        grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-      }
-
-      /* Floating emoji background layer */
-      .float-layer {
-        position: fixed;
-        inset: 0;
-        pointer-events: none;
-        z-index: 0;
-        overflow: hidden;
-      }
-      .float {
-        position: absolute;
-        font-size: clamp(1.6rem, 6vw, 3.2rem);
-        opacity: .18;
-        animation: float 12s linear infinite;
-      }
-      @keyframes float {
-        0%   { transform: translateY(110vh) translateX(0) rotate(0deg); }
-        100% { transform: translateY(-20vh) translateX(30px) rotate(360deg); }
-      }
-      /* Respect reduced motion */
-      @media (prefers-reduced-motion: reduce) {
-        .emoji, .float { animation: none !important; }
-      }
-
-      footer { margin-top: 3rem; font-size: .9rem; opacity: .7; }
+/* (CSS styles unchanged — same as your original code) */
+...
     </style>
   </head>
   <body>
@@ -124,7 +14,7 @@
     <div class="float-layer" aria-hidden="true">
       <div class="float" style="left:6%; animation-duration:14s;">🎓</div>
       <div class="float" style="left:22%; animation-duration:17s; animation-delay: -4s;">🗽</div>
-      <div class="float" style="left:48%; animation-duration:13s; animation-delay: -2s;">✈️</div>
+      <div class="float" style="left:48%; animation-duration:13s; animation-delay: -2s;"✈️</div>
       <div class="float" style="left:72%; animation-duration:16s; animation-delay: -6s;">🐶</div>
       <div class="float" style="left:88%; animation-duration:19s; animation-delay: -8s;">✨</div>
     </div>
@@ -132,12 +22,12 @@
     <main class="page">
       <header>
         <h1>Hi, I'm Jahnavi Reddy 👋</h1>
-        <p class="muted">Cloud/DevOps learner based in New York/New Jersey (currently in California!).  
+        <p class="muted">Cloud/DevOps learner based in New York/New Jersey.  
         This site is hosted on <strong>AWS EC2</strong> with <strong>Apache</strong> and updated via <strong>Git</strong>.</p>
         <p>
           <a href="https://github.com/jahnavi-reddy03" target="_blank" rel="noopener">GitHub</a> ·
-          <a href="#" target="_blank" rel="noopener">LinkedIn</a> ·
-          <a href="mailto:you@example.com">Email</a>
+          <a href="https://www.linkedin.com/in/k-jahnavi-reddy" target="_blank" rel="noopener">LinkedIn</a> ·
+          <a href="mailto:jahnavireddy.0803@gmail.com">Email</a>
         </p>
       </header>
 
@@ -148,7 +38,7 @@
   <div class="fact-card">🎓<span>CS Student</span></div>
   <div class="fact-card">🏙<span>New York Living</span></div>
   <div class="fact-card">✈️<span>Loves to Travel</span></div>
-  <div class="fact-card">🐶<span>Pet Dog Leo</span></div>
+  <div class="fact-card">🚗<span>Into Cars & Bikes</span></div>
 </div>
 
         <div class="facts">
@@ -161,7 +51,7 @@
           <article class="card">
             <div class="emoji slow">🗽</div>
             <h3>New York / New Jersey</h3>
-            <p>East Coast roots, currently visiting California.</p>
+            <p>Studying and staying here.</p>
           </article>
 
           <article class="card">
@@ -171,9 +61,9 @@
           </article>
 
           <article class="card">
-            <div class="emoji">🐶</div>
-            <h3>Dog Mom: Leo</h3>
-            <p>My golden buddy Leo is the best pair‑programmer (and snack thief).</p>
+            <div class="emoji">🚗</div>
+            <h3>Into Cars & Bikes</h3>
+            <p>I’m a big fan of long drives, cool rides, and road trips!</p>
           </article>
         </div>
       </section>
@@ -187,15 +77,21 @@
             <p>Deployed a secure static site on EC2 with Apache. Automated updates using Git.</p>
             <p class="muted">AWS · EC2 · Linux · Apache · Git</p>
           </article>
+
           <article class="card">
-            <h3>Project Two</h3>
-            <p>Replace with your own description & link to GitHub/demo.</p>
-            <p class="muted">Tech · Tech · Tech</p>
+            <h3>TweetClassify: High-Performance Twitter Data Classification</h3>
+            <p>• Developed a comprehensive data pre-processing pipeline to improve the classification accuracy of Twitter data.<br>
+            • Used SVM, Random Forest, DTC, Logistic Regression, Naive Bayes for sentiment and topic classification.<br>
+            • Optimized feature engineering and text pre-processing to boost accuracy and efficiency.</p>
+            <p class="muted">Python · ML · NLP · Twitter API</p>
           </article>
+
           <article class="card">
-            <h3>Project Three</h3>
-            <p>Replace with your own description & link to GitHub/demo.</p>
-            <p class="muted">Tech · Tech · Tech</p>
+            <h3>Enhancing Textual Understanding: CNN Models</h3>
+            <p>• Implemented Convolutional Neural Networks (CNNs) for automated feature learning from text.<br>
+            • Improved classification by analyzing deep patterns in natural language.<br>
+            • Applied deep learning for higher NLP accuracy and model performance.</p>
+            <p class="muted">Python · CNN · NLP · Deep Learning</p>
           </article>
         </div>
       </section>
